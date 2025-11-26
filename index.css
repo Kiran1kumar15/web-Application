@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-custom-float {
+    animation: float 3.5s ease-in-out infinite;
+  }
+  .animate-spin-slow {
+    animation: spin 14s linear infinite;
+  }
+  .animate-float-x {
+    animation: floatX 4s ease-in-out infinite;
+  }
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .animate-pulse-slower {
+    animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .animate-fade-slide-up {
+    animation: fadeSlideUp 1.2s ease-out 0.2s backwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-24px);}
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+@keyframes floatX {
+  0%, 100% { transform: translateX(0);}
+  50% { transform: translateX(24px);}
+}
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(32px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.16; }
+}
